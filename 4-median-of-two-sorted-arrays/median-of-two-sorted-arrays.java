@@ -3,10 +3,10 @@ class Solution {
         int n = nums1.length;
         int m = nums2.length;
         int x = n+m;
-        int[] arr = new int[x];
-        int i = 0;
-        int j = 0;
-        int indx =0;
+        int[] arr= new int[x];
+        int i =0;
+        int j =0;
+        int indx=0;
         while(i<n && j<m)
         {
             if(nums1[i]<nums2[j])
@@ -14,37 +14,36 @@ class Solution {
                 arr[indx++]=nums1[i];
                 i++;
             }
-            else if(nums1[i]>nums2[j])
-            {
-                arr[indx++]=nums2[j];
-                j++;
-            }
-            else
+            else if(nums1[i]==nums2[j])
             {
                 arr[indx++]=nums1[i];
                 arr[indx++]=nums2[j];
                 i++;
                 j++;
             }
-        }
-        while(i<n)
-        {
-            arr[indx++]=nums1[i];
-            i++;
+            else
+            {
+                arr[indx++]=nums2[j];
+                j++;
+            }
         }
         while(j<m)
         {
             arr[indx++]=nums2[j];
             j++;
         }
-        int low = 0;
-        int high = x-1;
-        int mid = (low+high)/2;
+        while(i<n)
+        {
+            arr[indx++]=nums1[i];
+            i++;
+        }
+        int l =0;
+        int h = x-1;
+        int mid = (l+h)/2;
         if(x%2==0)
         {
             return (double)(arr[mid]+arr[mid+1])/2.0;
-        }
-        return (double)(arr[mid]);
-       
+        } 
+        return (double)arr[mid];
     }
 }
