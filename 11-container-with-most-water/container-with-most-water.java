@@ -2,7 +2,7 @@ class Solution {
     public int maxArea(int[] height) {
         int i =0;
         int n = height.length-1;
-        int j =n;
+        int j = n;
         int area = 0;
         while(i<j)
         {
