@@ -6,7 +6,7 @@ class Solution {
             int next = target-nums[i];
             if(mp.containsKey(next))
             {
-                return new int[]{i,mp.get(next)};
+                return new int[]{i, mp.get(next)};
             }
             else
             {
